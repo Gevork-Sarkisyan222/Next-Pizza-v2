@@ -41,6 +41,10 @@ function Stories() {
 
   useEffect(() => {
     open && document.body.classList.add('no-scroll');
+    scrollTo({
+      behavior: 'instant',
+      top: 0,
+    });
 
     return () => {
       document.body.classList.remove('no-scroll');

@@ -19,7 +19,8 @@ import { PizzaSize, PizzaType } from '@/constants/pizza';
 import { Ingredient } from '@prisma/client';
 import emptyIcon from '../../../public/assets/images/empty-box.png';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
 
 interface Props {}
 const CartDrawer: React.FC<Props> = () => {
@@ -46,7 +47,7 @@ const CartDrawer: React.FC<Props> = () => {
     <SheetContent className="bg-[#F4F1EE] p-0 flex flex-col justify-between">
       {items.length === 0 ? (
         <article className="h-screen relative flex justify-center items-center">
-          <div className="flex flex-col justify-center items-center text-center">
+          <div className="flex flex-col justify-center items-center text-center w-[285px]">
             <Image className="mb-[20px]" width={120} height={120} src={emptyIcon} alt="emptyIcon" />
             <h2 className="mb-[6px] text-[22px] font-[600]">Корзина пустая</h2>
             <p className="text-[15px] text-[#000000] mb-[35px]">

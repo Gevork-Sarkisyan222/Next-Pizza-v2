@@ -30,6 +30,7 @@ import { createOrder } from '@/app/actions';
 import toast from 'react-hot-toast';
 import { useSession } from 'next-auth/react';
 import { Api } from '../../../../services/api-client';
+import { redirect } from 'next/navigation';
 
 export default function CheckoutPage() {
   const { data: session } = useSession();
@@ -93,6 +94,12 @@ export default function CheckoutPage() {
       fetchUserInfo();
     }
   }, [session]);
+
+  useEffect(() => {
+    if (items.length === 0) {
+      redirect('/');
+    }
+  }, [items]);
 
   return (
     <Container className="my-[50px]">
