@@ -47,7 +47,7 @@ const CheckboxFiltersGroup: React.FC<Props> = ({
 
         {...Array(limit)
           .fill(0)
-          .map(() => <Skeleton className="mb-4 h-6 rounded-[8px]" />)}
+          .map(() => <Skeleton key={Math.random()} className="mb-4 h-6 rounded-[8px]" />)}
 
         <Skeleton className="w-[100px] h-6 rounded-[8px]" />
       </div>

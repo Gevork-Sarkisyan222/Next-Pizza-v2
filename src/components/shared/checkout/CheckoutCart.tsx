@@ -19,6 +19,7 @@ const CheckoutCart: React.FC<Props> = ({ items, className, loading }) => {
           ? [...Array(4)].map((_, index) => <CheckoutItemSkeleton key={index} className="h-20" />)
           : items.map((item) => (
               <CheckoutItem
+                key={item.id}
                 id={item.id}
                 imageUrl={item.imageUrl}
                 name={item.name}

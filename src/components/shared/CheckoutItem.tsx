@@ -13,9 +13,9 @@ type Props = {
   name: string;
   price: number;
   quantity: number;
-  pizzaSize?: PizzaSize;
-  pizzaType?: PizzaType;
-  ingredients: Ingredient[];
+  pizzaSize?: any;
+  pizzaType?: any;
+  ingredients: any[];
   disabled?: boolean;
 };
 
